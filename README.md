@@ -15,6 +15,12 @@ A modern, feature-rich boilerplate for React Native applications using Expo, Typ
 - 🔌 **Axios** - Configured HTTP client
 - 💾 **AsyncStorage** - Persistent storage setup
 - 🎨 **Clean Architecture** - Well-organized project structure
+- 🔍 **Code Quality Tools**:
+  - ESLint for code linting
+  - Prettier for code formatting
+  - Husky for Git hooks
+  - lint-staged for staged files linting
+  - commitlint for commit message linting
 
 ## 📱 Screenshots
 
@@ -31,17 +37,20 @@ A modern, feature-rich boilerplate for React Native applications using Expo, Typ
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/react-native-expo-zustand-boilerplate.git
 ```
 
 2. Install dependencies:
+
 ```bash
 cd react-native-expo-zustand-boilerplate
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 ```
@@ -70,6 +79,7 @@ This boilerplate uses Zustand for state management. The store is organized into 
 - **User Slice**: Manages user-related state
 
 Example usage:
+
 ```typescript
 import { useApp, useUser } from '@/services/zustand';
 
@@ -113,6 +123,44 @@ Uses React Navigation with a pre-configured stack and tab navigation structure:
 - `npm run android` - Start the Android app
 - `npm run ios` - Start the iOS app
 - `npm run web` - Start the web app
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors
+- `npm run format` - Format code with Prettier
+
+## 💻 Development Tools
+
+### Code Quality
+
+- **ESLint**: JavaScript and TypeScript linting
+- **Prettier**: Code formatting
+- **Husky**: Git hooks for code quality
+- **lint-staged**: Run linters on git staged files
+- **commitlint**: Lint commit messages
+
+### Commit Message Convention
+
+This project follows the [Conventional Commits](https://www.conventionalcommits.org/) specification. Commit messages should be structured as follows:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Types include:
+
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation only changes
+- `style`: Changes that do not affect the meaning of the code
+- `refactor`: Code change that neither fixes a bug nor adds a feature
+- `perf`: Code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `build`: Changes that affect the build system or external dependencies
+- `ci`: Changes to CI configuration files and scripts
+- `chore`: Other changes that don't modify src or test files
 
 ## 📦 Dependencies
 
@@ -139,4 +187,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Expo](https://expo.dev/)
 - [React Navigation](https://reactnavigation.org/)
-- [Zustand](https://github.com/pmndrs/zustand) 
+- [Zustand](https://github.com/pmndrs/zustand)
