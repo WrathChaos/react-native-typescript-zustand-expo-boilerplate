@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Running pre-commit hooks..."
-npx lint-staged
+echo "🔍 Running pre-commit hooks..."
+echo "⚡ Running lint-staged with custom lint and prettier scripts..."
+npx lint-staged || {
+  echo "❌ Pre-commit hook failed (code: $?)"
+  echo "⚠️  If you still want to commit use --no-verify"
+  exit 1
+}
+echo "✅ Pre-commit hook completed successfully"

@@ -1,10 +1,10 @@
 import { useCallback, useEffect } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import RootNavigator from './src/navigation/RootNavigator';
 import './src/i18n';
-import { useApp, useStore } from './src/services/zustand';
+import { useApp } from './src/services/zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 SplashScreen.preventAutoHideAsync();
@@ -16,7 +16,7 @@ export default function App() {
   const { setInitialized, isDarkMode, setLanguage, toggleTheme } = useApp();
 
   const [fontsLoaded] = useFonts({
-    'Ionicons': require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
+    Ionicons: require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
   });
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function App() {
     }
 
     loadInitialState();
-  }, []);
+  }, [isDarkMode, setInitialized, setLanguage, toggleTheme]);
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -59,8 +59,14 @@ export default function App() {
   }
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <RootNavigator />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

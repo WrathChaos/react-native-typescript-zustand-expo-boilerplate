@@ -49,6 +49,13 @@ module.exports = [
       'react-native/no-inline-styles': 'warn',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-namespace': [
+        'error',
+        {
+          allowDeclarations: true,
+        },
+      ],
     },
   },
 ];
