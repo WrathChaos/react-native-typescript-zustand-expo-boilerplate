@@ -3,9 +3,5 @@
 
 echo "🔍 Running pre-commit hooks..."
 echo "⚡ Running lint-staged with custom lint and prettier scripts..."
-npx lint-staged || {
-  echo "❌ Pre-commit hook failed (code: $?)"
-  echo "⚠️  If you still want to commit use --no-verify"
-  exit 1
-}
+npx lint-staged
 echo "✅ Pre-commit hook completed successfully"

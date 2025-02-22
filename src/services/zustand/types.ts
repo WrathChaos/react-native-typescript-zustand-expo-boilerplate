@@ -23,4 +23,4 @@ export interface AppState {
   setInitialized: (status: boolean) => void;
   toggleTheme: () => void;
   setLanguage: (lang: string) => void;
-} 
+}

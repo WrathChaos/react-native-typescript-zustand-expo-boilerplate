@@ -10,18 +10,12 @@ export default function SettingsScreen() {
 
   return (
     <View style={[styles.container, isDarkMode && styles.darkContainer]}>
-      <Text style={[styles.title, isDarkMode && styles.darkText]}>
-        {t('settings.title')}
-      </Text>
-      
+      <Text style={[styles.title, isDarkMode && styles.darkText]}>{t('settings.title')}</Text>
+
       {user && (
         <View style={styles.section}>
-          <Text style={[styles.sectionTitle, isDarkMode && styles.darkText]}>
-            {user.name}
-          </Text>
-          <Text style={[styles.email, isDarkMode && styles.darkText]}>
-            {user.email}
-          </Text>
+          <Text style={[styles.sectionTitle, isDarkMode && styles.darkText]}>{user.name}</Text>
+          <Text style={[styles.email, isDarkMode && styles.darkText]}>{user.email}</Text>
         </View>
       )}
 
@@ -47,11 +41,15 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setLanguage('en')}
           >
-            <Text style={[
-              styles.buttonText,
-              language === 'en' && styles.activeButtonText,
-              isDarkMode && styles.darkText,
-            ]}>English</Text>
+            <Text
+              style={[
+                styles.buttonText,
+                language === 'en' && styles.activeButtonText,
+                isDarkMode && styles.darkText,
+              ]}
+            >
+              English
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[
@@ -61,11 +59,15 @@ export default function SettingsScreen() {
             ]}
             onPress={() => setLanguage('es')}
           >
-            <Text style={[
-              styles.buttonText,
-              language === 'es' && styles.activeButtonText,
-              isDarkMode && styles.darkText,
-            ]}>Español</Text>
+            <Text
+              style={[
+                styles.buttonText,
+                language === 'es' && styles.activeButtonText,
+                isDarkMode && styles.darkText,
+              ]}
+            >
+              Español
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -137,4 +139,4 @@ const styles = StyleSheet.create({
   activeButtonText: {
     color: '#fff',
   },
-}); 
+});

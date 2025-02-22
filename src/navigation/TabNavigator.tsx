@@ -41,4 +41,4 @@ export default function TabNavigator() {
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
-} 
+}

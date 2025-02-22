@@ -6,7 +6,7 @@ import i18next from 'i18next';
 const THEME_STORAGE_KEY = '@theme_mode';
 const LANGUAGE_STORAGE_KEY = '@language';
 
-export const createAppSlice: StateCreator<AppState> = (set) => ({
+export const createAppSlice: StateCreator<AppState> = set => ({
   isOnline: true,
   isInitialized: false,
   isDarkMode: false,
@@ -21,7 +21,7 @@ export const createAppSlice: StateCreator<AppState> = (set) => ({
   },
 
   toggleTheme: async () => {
-    set((state) => {
+    set(state => {
       const newTheme = !state.isDarkMode;
       AsyncStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(newTheme));
       return { ...state, isDarkMode: newTheme };
@@ -37,4 +37,4 @@ export const createAppSlice: StateCreator<AppState> = (set) => ({
       console.error('Error setting language:', error);
     }
   },
-}); 
+});

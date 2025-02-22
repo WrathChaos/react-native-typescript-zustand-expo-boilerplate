@@ -10,9 +10,7 @@ export default function HomeScreen() {
 
   return (
     <View style={[styles.container, isDarkMode && styles.darkContainer]}>
-      <Text style={[styles.text, isDarkMode && styles.darkText]}>
-        {t('home.welcome')}
-      </Text>
+      <Text style={[styles.text, isDarkMode && styles.darkText]}>{t('home.welcome')}</Text>
       {user && (
         <Text style={[styles.greeting, isDarkMode && styles.darkText]}>
           {t('home.greeting', { name: user.name })}
@@ -45,4 +43,4 @@ const styles = StyleSheet.create({
   darkText: {
     color: '#fff',
   },
-}); 
+});

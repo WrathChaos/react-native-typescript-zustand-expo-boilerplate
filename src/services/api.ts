@@ -10,24 +10,24 @@ const api = axios.create({
 
 // Request interceptor
 api.interceptors.request.use(
-  (config) => {
+  config => {
     // You can add auth tokens here
     return config;
   },
-  (error) => {
+  error => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Response interceptor
 api.interceptors.response.use(
-  (response) => {
+  response => {
     return response;
   },
-  (error) => {
+  error => {
     // Handle errors globally
     return Promise.reject(error);
-  }
+  },
 );
 
-export default api; 
+export default api;

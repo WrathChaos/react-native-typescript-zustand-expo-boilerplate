@@ -12,17 +12,17 @@ export const useStore = create<StoreState>()((...args) => ({
 
 // Convenience hooks for specific slices
 export const useApp = () => {
-  const { 
-    isOnline, 
-    isInitialized, 
-    isDarkMode, 
+  const {
+    isOnline,
+    isInitialized,
+    isDarkMode,
     language,
-    setOnlineStatus, 
+    setOnlineStatus,
     setInitialized,
     toggleTheme,
-    setLanguage 
+    setLanguage,
   } = useStore();
-  
+
   return {
     isOnline,
     isInitialized,
@@ -31,22 +31,17 @@ export const useApp = () => {
     setOnlineStatus,
     setInitialized,
     toggleTheme,
-    setLanguage
+    setLanguage,
   };
 };
 
 export const useUser = () => {
-  const { 
-    user, 
-    isLoading, 
-    updateUser, 
-    setUser 
-  } = useStore();
-  
+  const { user, isLoading, updateUser, setUser } = useStore();
+
   return {
     user,
     isLoading,
     updateUser,
-    setUser
+    setUser,
   };
-}; 
+};
