@@ -11,8 +11,8 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
-    "lint": "node lint.mjs",
-    "prettier": "node prettier.mjs"
+    "lint": "node ./src/scripts/terminal/lint.mjs",
+    "prettier": "node ./src/scripts/terminal/prettier.mjs"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.1.1",
