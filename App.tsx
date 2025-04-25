@@ -1,22 +1,22 @@
-import { useCallback, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import RootNavigator from './src/navigation/RootNavigator';
-import './src/i18n';
-import { useApp } from './src/services/zustand';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useCallback, useEffect } from "react";
+import { View, StyleSheet } from "react-native";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import RootNavigator from "./src/navigation/RootNavigator";
+import "./src/i18n";
+import { useApp } from "./src/services/zustand";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 SplashScreen.preventAutoHideAsync();
 
-const THEME_STORAGE_KEY = '@theme_mode';
-const LANGUAGE_STORAGE_KEY = '@language';
+const THEME_STORAGE_KEY = "@theme_mode";
+const LANGUAGE_STORAGE_KEY = "@language";
 
 export default function App() {
   const { setInitialized, isDarkMode, setLanguage, toggleTheme } = useApp();
 
   const [fontsLoaded] = useFonts({
-    Ionicons: require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
+    Ionicons: require("@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf"),
   });
 
   useEffect(() => {
@@ -40,12 +40,15 @@ export default function App() {
 
         setInitialized(true);
       } catch (error) {
-        console.error('Error loading initial state:', error);
+        console.error("Error loading initial state:", error);
         setInitialized(true);
       }
     }
 
-    loadInitialState();
+    loadInitialState().catch(() => {
+      console.error("::Error loading initial state::");
+      setInitialized(true);
+    });
   }, [isDarkMode, setInitialized, setLanguage, toggleTheme]);
 
   const onLayoutRootView = useCallback(async () => {
