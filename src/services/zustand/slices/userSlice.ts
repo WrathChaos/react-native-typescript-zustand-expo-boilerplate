@@ -1,15 +1,15 @@
-import { StateCreator } from 'zustand';
-import { UserState, User } from '../types';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { StateCreator } from "zustand";
+import { UserState, User } from "../types";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const USER_STORAGE_KEY = '@user_data';
+const USER_STORAGE_KEY = "@user_data";
 
-export const createUserSlice: StateCreator<UserState> = set => ({
+export const createUserSlice: StateCreator<UserState> = (set) => ({
   user: null,
   isLoading: false,
 
   updateUser: async (userData: Partial<User>) => {
-    set(state => {
+    set((state) => {
       if (!state.user) return state;
 
       const updatedUser = {

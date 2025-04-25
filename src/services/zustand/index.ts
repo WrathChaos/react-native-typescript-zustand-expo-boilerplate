@@ -1,7 +1,7 @@
-import { create } from 'zustand';
-import { createAppSlice } from './slices/appSlice';
-import { createUserSlice } from './slices/userSlice';
-import { AppState, UserState } from './types';
+import { create } from "zustand";
+import { createAppSlice } from "./slices/appSlice";
+import { createUserSlice } from "./slices/userSlice";
+import { AppState, UserState } from "./types";
 
 type StoreState = AppState & UserState;
 

@@ -81,7 +81,7 @@ This boilerplate uses Zustand for state management. The store is organized into 
 Example usage:
 
 ```typescript
-import { useApp, useUser } from '@/services/zustand';
+import { useApp, useUser } from "@/services/zustand";
 
 // In your component
 const { isDarkMode, toggleTheme } = useApp();
@@ -93,11 +93,11 @@ const { user, updateUser } = useUser();
 Supports multiple languages using i18next. Easy to add new languages and translations.
 
 ```typescript
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // In your component
 const { t } = useTranslation();
-console.log(t('home.welcome'));
+console.log(t("home.welcome"));
 ```
 
 ## 🎨 Theming

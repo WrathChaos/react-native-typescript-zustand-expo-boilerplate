@@ -1,16 +1,16 @@
-import { StateCreator } from 'zustand';
-import { AppState } from '../types';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import i18next from 'i18next';
+import { StateCreator } from "zustand";
+import { AppState } from "../types";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import i18next from "i18next";
 
-const THEME_STORAGE_KEY = '@theme_mode';
-const LANGUAGE_STORAGE_KEY = '@language';
+const THEME_STORAGE_KEY = "@theme_mode";
+const LANGUAGE_STORAGE_KEY = "@language";
 
-export const createAppSlice: StateCreator<AppState> = set => ({
+export const createAppSlice: StateCreator<AppState> = (set) => ({
   isOnline: true,
   isInitialized: false,
   isDarkMode: false,
-  language: 'en',
+  language: "en",
 
   setOnlineStatus: (status: boolean) => {
     set({ isOnline: status });
@@ -21,7 +21,7 @@ export const createAppSlice: StateCreator<AppState> = set => ({
   },
 
   toggleTheme: async () => {
-    set(state => {
+    set((state) => {
       const newTheme = !state.isDarkMode;
       AsyncStorage.setItem(THEME_STORAGE_KEY, JSON.stringify(newTheme));
       return { ...state, isDarkMode: newTheme };
@@ -34,7 +34,7 @@ export const createAppSlice: StateCreator<AppState> = set => ({
       await i18next.changeLanguage(lang);
       set({ language: lang });
     } catch (error) {
-      console.error('Error setting language:', error);
+      console.error("Error setting language:", error);
     }
   },
 });
