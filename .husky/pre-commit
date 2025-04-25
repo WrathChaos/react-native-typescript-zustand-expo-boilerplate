@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🔍 Running pre-commit hooks..."
-echo "⚡ Running lint-staged with custom lint and prettier scripts..."
-npx lint-staged
-echo "✅ Pre-commit hook completed successfully"
+npm run prettier --silent
+npm run lint --silent
