@@ -16,11 +16,10 @@ A modern, feature-rich boilerplate for React Native applications using Expo, Typ
 - 💾 **AsyncStorage** - Persistent storage setup
 - 🎨 **Clean Architecture** - Well-organized project structure
 - 🔍 **Code Quality Tools**:
-  - ESLint for code linting
-  - Prettier for code formatting
-  - Husky for Git hooks
-  - lint-staged for staged files linting
-  - commitlint for commit message linting
+    - ESLint for code linting
+    - Prettier for code formatting
+    - Husky for Git hooks
+    - commitlint for commit message linting
 
 ## 📱 Screenshots
 
@@ -134,7 +133,6 @@ Uses React Navigation with a pre-configured stack and tab navigation structure:
 - **ESLint**: JavaScript and TypeScript linting
 - **Prettier**: Code formatting
 - **Husky**: Git hooks for code quality
-- **lint-staged**: Run linters on git staged files
 - **commitlint**: Lint commit messages
 
 ### Commit Message Convention
